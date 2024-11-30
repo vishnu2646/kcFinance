@@ -71,6 +71,7 @@ export class ReciptFormComponent implements OnInit {
                     this.formData.VCode = Table[0].VCode;
                     this.formData.Vname = Table[0].Vname;
                     this.formData.Vid = Table[0].Vid;
+                    this.formData.AuthCod = parsedData.OTP;
                 },
                 error: (error) => {
                     console.log(error);

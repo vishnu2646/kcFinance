@@ -10,7 +10,7 @@ import { IStatementList } from 'src/app/types/types';
 export class DashboardComponent implements OnInit {
     private apiService = inject(ApiService);
 
-    public column: String[] = [];
+    public route: String = '';
 
     public data: IStatementList[] = [];
 
@@ -24,7 +24,7 @@ export class DashboardComponent implements OnInit {
             this.apiService.deliveryPortalService(parsedData).subscribe({
                 next: (response) => {
                     this.data = response.GetDeliveryPortal.Table;
-                    this.column = Object.keys(this.data[0]);
+                    this.route = parsedData.Route;
                 },
                 error: (error) => {
                     console.log(`error:`, error);

@@ -1,9 +1,9 @@
 <section class="w-full">
     <header class="mb-10">
-        <h4 class="text-center font-semibold text-[28px] m-10">Account Statement</h4>
-        <main class="flex flex-col gap-5 p-10 border-2 rounded-md bg-slate-50 border-slate-50">
-            <h4 class="text-xl">Route: <span class="font-semibold capitalize">Chennai-Main</span></h4>
-            <h4 class="text-xl" routerLink="/delivery/recipt" routerLinkActive="true"><span class="font-semibold capitalize">Recipt</span></h4>
+        <h4 class="text-center font-semibold text-[28px] m-5">Account Statement</h4>
+        <main class="flex flex-col gap-5 p-5 border-2 rounded-md bg-slate-50 border-slate-50">
+            <h4 class="text-xl">Route: <span class="font-semibold capitalize">{{ route }}</span></h4>
+            <button class="bg-[#1BB1DC] text-white px-5 py-2 rounded-full hover:bg-[#1bb2dcd2]" routerLink="/delivery/recipt" routerLinkActive="true">Receipt</button>
         </main>
     </header>
     <main class="w-full">

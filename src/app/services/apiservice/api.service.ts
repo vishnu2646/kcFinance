@@ -10,7 +10,9 @@ export class ApiService {
 
     private httpClient = inject(HttpClient);
 
-    private baseUrl = "http://192.168.1.44:2024";
+    // private baseUrl = "http://192.168.1.44:2024";
+
+    private baseUrl = "http://rx2025apiservice.revampapps.com";
 
     private key = 'kcf2025';
 

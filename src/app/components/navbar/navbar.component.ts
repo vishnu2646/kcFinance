@@ -17,7 +17,7 @@ export class NavbarComponent {
         this.router.events.subscribe((val) => {
             if(val instanceof NavigationEnd) {
                 if(val.url === "/login") {
-                    this.isToggled = false;
+                    this.isLoggedIn = false;
                 } else {
                     this.isLoggedIn = true;
                 }
