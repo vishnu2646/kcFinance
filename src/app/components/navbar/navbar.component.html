@@ -1,0 +1,24 @@
+<header class="w-full bg-white">
+    <nav class="flex justify-between items-center w-[92%] mx-auto">
+        <div>
+            <h4 class="text-[24px] font-semibold">Revamp Technologies</h4>
+        </div>
+        <div class="nav-links duration-700 md:static absolute bg-white md:min-h-fit min-h-[100vh] top-0 md:w-auto w-[40%] flex items-center px-5" [ngClass]="!isToggled ? 'left-[-100%]' : 'left-[0%]'">
+            <ul class="flex md:flex-row flex-col items-start md:gap-[4vw] gap-8">
+                <li>
+                    <a class="hover:text-[#1BB1DC]" href="/delivery/recipt/">Recipt</a>
+                </li>
+                <li>
+                    <span class="hover:text-[#1BB1DC]" (click)="handleLogout()">Logout</span>
+                </li>
+            </ul>
+        </div>
+        <div class="flex items-center gap-6">
+            <button class="bg-[#1BB1DC] text-white px-5 py-2 rounded-full hover:bg-[#1bb2dcd2]" routerLink="/login" *ngIf="isLoggedIn">SignOut</button>
+            <button class="bg-[#1BB1DC] text-white px-5 py-2 rounded-full hover:bg-[#1bb2dcd2]" routerLink="/login" *ngIf="!isLoggedIn">SignIn</button>
+            <span (click)="toggleNavbarMenu()">
+                <i class="text-3xl cursor-pointer fa-solid md:hidden" [ngClass]="!isToggled ? 'fa-bars' : 'fa-xmark'"></i>
+            </span>
+        </div>
+    </nav>
+</header>

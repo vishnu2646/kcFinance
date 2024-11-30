@@ -1,0 +1,57 @@
+<section class="p-5 bg-[#f6f6f6] h-[90vh]">
+    <header class="mb-10">
+        <h4 class="text-center font-semibold text-[28px] m-6">Delivary Recipt</h4>
+    </header>
+    <main class="flex flex-col w-full gap-3 p-5 bg-white shadow-lg rounded-xl">
+        <h4 class="text-center text-[22px]">Customer: {{ formData.Vname }}</h4>
+        <h4 class="text-center text-[22px]" [innerHTML]="balance"></h4>
+        <div class="flex items-center justify-between mb-2">
+            <label for="item_no">Payment Mode:</label>
+            <div class="bg-gray-500 border-2 rounded-md w-[200px] h-[40px]">
+                <select
+                    name="item_no"
+                    id="item_no"
+                    class="w-full h-full px-2 outline-none"
+                    [(ngModel)]="seletedMode"
+                    (ngModelChange)="handleSelectMode($event)"
+                >
+                    <option value="choose option" [ngValue]="mode" *ngFor="let mode of modes">{{ mode.PMName }}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-between">
+            <label for="balance">Amount:</label>
+            <div class="bg-gray-500 border-2 h-[40px] w-[200px] flex flex-col gap-5 rounded-md">
+                <input type="number" [(ngModel)]="formData.ReceiptAmt" class="h-full px-[15px] w-full outline-none text-[16px]" placeholder="Enter Amount">
+            </div>
+        </div>
+
+        <div class="flex items-center justify-between gap-2" *ngIf="isRefvisible">
+            <label for="ref_no">Ref No</label>
+            <div class="bg-gray-500 border-2 h-[40px] w-[200px] flex flex-col gap-5 rounded-md">
+                <input type="text" [(ngModel)]="formData.RefNumber" name="ref_no" class="h-full px-[15px] w-full outline-none text-[16px]" placeholder="Enter Refrence number">
+            </div>
+        </div>
+
+        <div class="flex items-center justify-between gap-2">
+            <label for="desp_qty"></label>
+            <div class="bg-gray-500 border-2 h-[40px] w-full flex flex-col gap-5 rounded-md">
+                <input type="text" name="desp_qty" [(ngModel)]="formData.Note" class="h-full px-[15px] w-full outline-none text-[16px]" placeholder="Enter Description">
+            </div>
+        </div>
+
+        <div class="flex items-center justify-around">
+            <div class="bg-[#1BB1DC] h-[40px] w-[200px] flex flex-col gap-5 rounded-md">
+                <button
+                    type="button"
+                    class="h-full text-white px-[15px] w-full outline-none text-[16px]"
+                    (click)="hanldeSaveRecipt()"
+                >
+                    Submit
+                </button>
+            </div>
+        </div>
+    </main>
+</section>
+

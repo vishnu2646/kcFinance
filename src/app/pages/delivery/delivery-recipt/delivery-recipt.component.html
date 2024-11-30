@@ -1,0 +1,56 @@
+<section class="p-5 bg-[#f6f6f6] h-[90vh]">
+    <header class="mb-10">
+        <h4 class="text-center font-semibold text-[28px] m-6">Delivary Recipt</h4>
+    </header>
+    <main class="w-full bg-white flex flex-col gap-3 rounded-xl shadow-lg p-5">
+        <h4 class="text-center text-[22px] m-5">Customer: Bloom Vally</h4>
+        <div class="flex justify-around items-center mb-2">
+            <label for="item_no">Item No:</label>
+            <div class="bg-gray-500 w-[200px] h-[40px]">
+                <select name="item_no" id="item_no" class="w-full px-2 outline-none h-full">
+                    <option value="choose option" selected>Select a quantity</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="flex justify-around items-center">
+            <label for="balance">Bal Qty:</label>
+            <div class="bg-gray-500 border-2 h-[40px] w-[200px] flex flex-col gap-5 rounded-md">
+                <input type="number" class="h-full px-[15px] w-full outline-none text-[16px]" disabled placeholder="Enter value" value="100">
+            </div>
+        </div>
+
+        <div class="flex justify-around items-center">
+            <label for="desp_qty">DESP QTY:</label>
+            <div class="bg-gray-500 border-2 h-[40px] w-[200px] flex flex-col gap-5 rounded-md">
+                <input type="number" name="desp_qty" class="h-full px-[15px] w-full outline-none text-[16px]" placeholder="Enter value">
+            </div>
+        </div>
+
+        <div class="flex justify-around items-center">
+            <label for="empty_qty">Empty Qty:</label>
+            <div class="bg-gray-500 border-2 h-[40px] w-[200px] flex flex-col gap-5 rounded-md">
+                <input type="number" name="empty_qty" class="h-full px-[15px] w-full outline-none text-[16px]" placeholder="Enter value">
+            </div>
+        </div>
+
+        <div class="flex flex-col">
+            <label for="empty_qty">Marker Eraser:</label>
+            <div id="signature-div" class="bg-white border-2 border-dashed h-[100px] w-full flex justify-center items-center gap-5 rounded-md" (click)="toggleShowCanvas()">
+                <p class="text-gray-500">
+                    Click to Add Signature
+                </p>
+            </div>
+        </div>
+    </main>
+</section>
+<section class="signature h-dvh flex flex-col justify-center items-center" *ngIf="showCanvas">
+    <h4 class="text-2xl text-center mb-3">Add your Signature</h4>
+    <canvas id="canvas" #canvas class="w-full"></canvas>
+    <button class="bg-green-400 px-4 py-2 text-white rounded-md" (click)="toggleShowCanvas()">copy & close</button>
+</section>

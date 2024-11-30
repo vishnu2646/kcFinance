@@ -1,0 +1,38 @@
+<section class="w-full">
+    <header class="mb-10">
+        <h4 class="text-center font-semibold text-[28px] m-10">Account Statement</h4>
+        <main class="flex flex-col gap-5 p-10 border-2 rounded-md bg-slate-50 border-slate-50">
+            <!-- <h4 class="text-xl">Loged User: <span class="font-semibold capitalize">ramya</span></h4>
+            <h4 class="text-xl">Vechicle: <span class="font-semibold capitalize">R88866</span></h4> -->
+            <h4 class="text-xl">Route: <span class="font-semibold capitalize">Chennai-Main</span></h4>
+        </main>
+    </header>
+    <main class="w-full">
+        <div class="w-full overflow-x-auto max-h-80">
+            <ng-container *ngIf="isDataLoading; else dataTemplate">
+                <app-loader></app-loader>
+            </ng-container>
+            <ng-template #dataTemplate>
+                <table class="w-full bg-white">
+                    <thead class="border border-b-2">
+                        <tr>
+                            <th class="p-2 text-sm font-semibold text-left" *ngFor="let col of column">{{ col }}</th>
+                        </tr>
+                    </thead>
+                    <tbody class="border border-b-2">
+                        <tr *ngFor="let d of data">
+                            <td class="p-2 text-sm text-left text-gray-500">{{ d.AccId }}</td>
+                            <td class="p-2 text-sm text-left text-gray-500">{{ d.CName }}</td>
+                            <td class="p-2 text-sm text-left text-gray-500">{{ d.C_Bal_Amt }}</td>
+                            <td class="p-2 text-sm text-left text-gray-500">{{ d.C_Bal_Due }}</td>
+                            <td class="p-2 text-sm text-left text-gray-500">{{ d.CurrenAmt }}</td>
+                            <td class="p-2 text-sm text-left text-gray-500">{{ d.LedgerNo }}</td>
+                            <td class="p-2 text-sm text-left text-gray-500">{{ d.MobileNo }}</td>
+                            <td class="p-2 text-sm text-left text-gray-500">{{ d.rsid }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </ng-template>
+        </div>
+    </main>
+</section>
