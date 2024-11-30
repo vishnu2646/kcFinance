@@ -20,40 +20,30 @@
             <table class="w-full bg-white">
                 <thead class="border border-b-2">
                     <tr>
-                        <td class="p-2 text-sm text-center text-gray-500 font-regular" *ngFor="let column of columns">{{ column }}</td>
+                        <td class="p-2 text-sm text-left text-gray-500 font-regular">Customer Code</td>
+                        <td class="p-2 text-sm text-left text-gray-500 font-regular">Customer Name</td>
+                        <td class="p-2 text-sm text-left text-gray-500 font-regular">Route</td>
                     </tr>
                 </thead>
                 <tbody class="border border-b-2">
                     <tr *ngFor="let col of (data | filterdata: filterValue | async)">
                         <td
-                            class="text-[14px] text-black p-2 text-center"
-                            routerLink="/delivery/bill/{{ col.Vid }}" routerLinkActive="true"
-                        >
-                            {{ col.Vid }}
-                        </td>
-                        <td
-                            class="text-[14px] text-black p-2 text-center"
+                            class="text-[14px] text-black p-2 text-left"
                             routerLink="/delivery/bill/{{ col.Vid }}" routerLinkActive="true"
                         >
                             {{ col.Vcode }}
                         </td>
                         <td
-                            class="text-[14px] text-black p-2 text-center"
+                            class="text-[14px] text-black p-2 text-left"
                             routerLink="/delivery/bill/{{ col.Vid }}" routerLinkActive="true"
                         >
                             {{ col.Vname }}
                         </td>
                         <td
-                            class="text-[14px] text-black p-2 text-center"
+                            class="text-[14px] text-black p-2 text-left"
                             routerLink="/delivery/bill/{{ col.Vid }}" routerLinkActive="true"
                         >
                             {{ col.RouteName }}
-                        </td>
-                        <td
-                            class="text-[14px] text-black p-2 text-center"
-                            routerLink="/delivery/bill/{{ col.Vid }}" routerLinkActive="true"
-                        >
-                            {{ col.Action }}
                         </td>
                     </tr>
                 </tbody>
